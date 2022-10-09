@@ -11,10 +11,10 @@ private:
 
 public:
     // constructors
-    Project();
+    //Project();
     Project(char);
     // destructor
-    ~Project(){};
+    //~Project(){};
 
     // functions
     void display();

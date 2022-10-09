@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Person.h"
+#include "../headers/Person.h"
 
 Person::Person()
 // constructor
@@ -15,7 +15,7 @@ void Person::display()
     std::cout << name_;
 }
 // destructor
-Person::~Person() {}
+//Person::~Person() {}
 
 // no need for the scope operator since its a friend
 
@@ -23,4 +23,5 @@ Person::~Person() {}
 std::ostream &operator<<(std::ostream &out, Person &me)
 {
     out << me.name_;
+    return out;
 }

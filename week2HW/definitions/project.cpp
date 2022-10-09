@@ -1,17 +1,17 @@
 #include <iostream>
-#include "Project.h"
+#include "../headers/Project.h"
 
 // constructors
-Project::Project()
-{
-    code_ = ' ';
-}
+// Project::Project()
+// {
+//     code_ = ' ';
+// }
 Project::Project(char code)
 {
     code_ = code;
 }
 // destructor
-Project::~Project() {}
+//Project::~Project() {}
 
 // functions
 void Project::display()
@@ -21,4 +21,5 @@ void Project::display()
 std::ostream &operator<<(std::ostream &out, Project me)
 {
     out << me.code_;
+    return out;
 }

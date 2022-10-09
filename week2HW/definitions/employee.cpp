@@ -1,20 +1,20 @@
 #include <iostream>
-#include "Employee.h"
-#include "Project.h"
+#include "../headers/Employee.h"
+#include "../headers/Project.h"
 
 // constructor
-Employee::Employee()
-{
-    id_ = 0;
-}
+// Employee::Employee()
+// {
+//     id_ = 0;
+// }
 Employee::Employee(std::string name, char pCode, int id) : Person(name)
 {
-    Project code(pCode);
+    //Project code=Project(pCode);
     id_ = id;
 }
 
 // destructor
-Employee::~Employee() {}
+// Employee::~Employee() {}
 
 void Employee::display()
 {
@@ -26,4 +26,5 @@ void Employee::display()
 std::ostream &operator<<(std::ostream &out, Employee me)
 {
     out << me.id_;
+    return out;
 }

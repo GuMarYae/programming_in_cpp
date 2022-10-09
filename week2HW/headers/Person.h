@@ -13,7 +13,7 @@ public:
     Person();
     Person(std::string);
     // destructor
-    ~Person();
+    //~Person();
 
     // functions
     void display();

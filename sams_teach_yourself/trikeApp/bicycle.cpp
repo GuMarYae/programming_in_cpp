@@ -5,6 +5,9 @@ Bicycle::Bicycle()
 {
     speed_ = 0;
 }
+Bicycle::~Bicycle(){
+    //do nothing this just frees up memory after the constructor is used
+};
 
 int Bicycle::getSpeed()
 {
@@ -23,11 +26,10 @@ void Bicycle::setSpeed(int newSpeed)
 // pedal the dang bike!
 void Bicycle::pedal()
 {
-    speed_ = speed_ +2;
-    //you can eliminate line 26 and just put setSpeed(speed_+1); for line 28
+    speed_ = speed_ + 2;
+    // you can eliminate line 26 and just put setSpeed(speed_+1); for line 28
     setSpeed(speed_);
-    
-    
+
     std::cout << "peddaling speed is " << speed_ << std::endl;
 }
 void Bicycle::brake()

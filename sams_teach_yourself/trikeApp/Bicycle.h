@@ -12,6 +12,7 @@ private:
 
 public:
     Bicycle();
+    ~Bicycle();
     // getters
     int getSpeed();
     // setters. setters are usually void data types

@@ -19,13 +19,13 @@ int main()
     // also, remember that (*pCount)++ is indirectly adding the value of count++ while count++ is directly adding
     // its value
 
-    std::cout << count << "\n"   // 7 🔥🔥UPDATE🔥🔥 The value stored in count is retrieved directly from
+    std::cout <<"1.) " << count << "\n"   // 7 🔥🔥UPDATE🔥🔥 The value stored in count is retrieved directly from
                                  // count and indirectly through a pointer variable using *pCount
-              << *pCount << "\n" // 7
+              <<"2.) "<< *pCount << "\n" // 7
 
-              << &count << "\n" // address
-              << pCount << "\n" // 🔥🔥UPDATE🔥🔥 this line displays the value stored in pCount, which is same as &count
-                                // Referencing a value through a pointer is often called indirection.
+              <<"3.) "<< &count << "\n" // address
+              <<"4.) "<< pCount << "\n" // 🔥🔥UPDATE🔥🔥 this line displays the address stored in pCount, which is same as &count
+                                // Referencing a address through a pointer is often called indirection.
                                 // The syntax for referencing a value from a pointer is
                                 // *pointer
 

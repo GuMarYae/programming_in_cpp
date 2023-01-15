@@ -13,6 +13,7 @@ int main()
 
     for (int i = 1; i < MY_LIST; i++)
     {
+        //std::cout << i << "\n";
         if (myArr[i] > max)
         {
             max = myArr[i];

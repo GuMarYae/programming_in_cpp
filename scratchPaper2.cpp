@@ -41,17 +41,17 @@ int main()
     int myAge = 35;
     int *pAge = &myAge;
 
-    std::cout << "1 myage = " << myAge << "\n"; //value
-    std::cout << "2 *pAge = " << *pAge << "\n"; //value
+    std::cout << "1 myage = " << myAge << "\n";     //value
+    std::cout << "2 *pAge = " << *pAge << "\n";     //value
 
-    std::cout << "3 pAge = " << pAge << "\n";  //address of myAge (&myAge's address)
+    std::cout << "3 pAge = " << pAge << "\n";       //address of myAge (&myAge's address)
 
-    *pAge = 8405; //changing the value of myAge
-    pAge = &myAge; //same as line 42 but when redeclaring it, you need not the (*) or else you would be referring to the value of myAge indirectly
+    *pAge = 8405;                                   //changing the value of myAge
+    pAge = &myAge;                                  //same as line 42 but when redeclaring it, you need not the (*) or else you would be referring to the value of myAge indirectly
 
-    std::cout << "4 *pAge = " << *pAge << "\n"; //*pAge indirectly changed myAge
-    std ::cout << "5 myAge = " << myAge << "\n";//you see the change that *pAge made  in line 52 and 53
-    std::cout << "3 pAge = " << pAge << "\n";  //address of myAge (&myAge's address) out of those changes, you see the address remains the same
+    std::cout << "4 *pAge = " << *pAge << "\n";     //*pAge indirectly changed myAge
+    std ::cout << "5 myAge = " << myAge << "\n";    //you see the change that *pAge made  in line 52 and 53
+    std::cout << "3 pAge = " << pAge << "\n";       //address of myAge (&myAge's address) out of those changes, you see the address remains the same
 
     std::cout << "6 so you can indirectly change myAge by changinf the pointer value of *pAge since its pointing to the address of it (myAge)";
     std::cout << "7 \n"

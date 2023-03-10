@@ -5,3 +5,15 @@ to compile the professional way
 
 for javascript
 1.) node nameOffile.js [ENTER}
+
+----------------------------------------------------
+
+you can use 
+
+    return 0;
+or 
+    system("pause>0")
+
+but return 0 is always recommended
+
+----------------------------------------------------

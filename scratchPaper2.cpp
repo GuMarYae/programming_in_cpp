@@ -12,8 +12,18 @@
 int main()
 {
 
-    int numbers;
-    std::cout << numbers;
+    double numbers;
+    long numbers2;
+
+    if (sizeof(numbers2) == sizeof(numbers))
+    {
+        std::cout << sizeof(numbers2) << "\n"
+                  << sizeof(numbers);
+    }
+    else
+        std::cout << "not equal";
+
+   
 
     return 0;
 };

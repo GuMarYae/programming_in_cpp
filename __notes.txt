@@ -1,0 +1,7 @@
+to compile the professional way
+
+1) g++ -o test nameOfFile.cpp [ENTER]
+2) ./test [ENTER]
+
+for javascript
+1.) node nameOffile.js [ENTER}

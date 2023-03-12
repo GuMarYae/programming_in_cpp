@@ -48,11 +48,18 @@ public:
 //--------------------------
 int main()
 {
-    const int numberMammals = 3; // a strict
-    Mammal *zoo[numberMammals];  // an array for preparation
-    Mammal *pMammal;             // pointer
+    const int numberMammals = 3;     // a strict number holder for an array
+    Mammal *zoo[numberMammals] = {}; // an array for preparation
+    // you can comment the above out, along with the first forloop below and put
+    //  Mammal *zoo[numberMammals]={new Dog, new Dog, new Cat};
+
+    Mammal *pMammal; // pointer
 
     int choice, i;
+    // so, in this loop, basically its asking to create a type of mammal of a dog or a cat in an array
+    // with up to 3 total
+
+    //======================
 
     for (i = 0; i < numberMammals; i++)
     {
@@ -63,22 +70,33 @@ int main()
             pMammal = new Dog;
         else
             pMammal = new Cat;
-        zoo[i] = pMammal; // so, the iterator of zoo (zoo[i] will stored in the address of pMammal)
-                          // then pMammal gets an address, I think
+        zoo[i] = pMammal; 
+
+     /*⬇️⬇️⬇️⬇️
+     I also changed it up to this and this loop worked
+        if (choice == 1)
+            zoo[i] = new Dog;
+        else
+            zoo[i] = new Cat;
+    Then I commented out 
+    zoo[i] = pMammal;
+     */
     }
 
-    std::cout << "the number of pmam is: " << pMammal;
+    //======================
+
+    // std::cout << "the number of pmammal is: " << pMammal;
     std::cout << "\n";
 
     for (i = 0; i < numberMammals; i++)
     {
-        zoo[i]->speak();
+        zoo[i]->speak(); // the loop walks hrough the array and each objects virtual speak() member will be called/invked
 
-        Cat *pRealCat = dynamic_cast<Cat *>(zoo[i]);
+        Cat *pRealCat = dynamic_cast<Cat *>(zoo[i]);//this ensures that the pbject is a cat
 
-        if (pRealCat)
+        if (pRealCat)//if the pointer to a cat is true then...
 
-            pRealCat->purr();
+            pRealCat->purr();//if the pointer to a cat is true then purr
         else
             std::cout << "Oh naww, thats not a cat, bruh ";
 
@@ -87,3 +105,5 @@ int main()
         std::cout << "\n";
     }
 }
+
+// dont quite get this code perfectly, yet

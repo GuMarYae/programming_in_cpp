@@ -1,55 +1,89 @@
 #include <iostream>
-// #include <iomanip>
-// #include <string>
+#include <iomanip>
+
+/*
+this is an example of if you want your cat to do something that the base class cant represent. like, all mammals cant speak but
+we want the cat to purr.. so this is how you would do it.. sams p 268
+*/
 
 class Mammal
 {
-
 private:
-protected:
     int age;
 
 public:
-    // construct
+    // constructor
     Mammal()
     {
         age = 1;
-        std::cout << "Mammal constructor ...\n";
+        std::cout << " Mammal constuctor";
     }
-    // destroy
-    ~Mammal() { std::cout << "Mammal destrucor ...\n"; }
-
-    void move() const { std::cout << " Mammal, move one step \n"; }
-
-    virtual void speak() const { std::cout << " Mammal Speak \n"; }
+    // destructor
+    ~Mammal()
+    {
+        std::cout << " Mammal destructor";
+    }
+    virtual void speak() const { std::cout << "Mammal speak\n"; }
 };
+//--------------------------
+class Cat : public Mammal
+{
+public:
+    Cat() { std::cout << "Cat constructor\n"; }
+    ~Cat() { std::cout << "Cat destructor\n"; }
 
+    void speak() const { std::cout << "meow\n"; }
+    void purr() const { std::cout << "Rrrrrrrrrrrr\n"; }
+};
+//--------------------------
 class Dog : public Mammal
 {
 
-private:
-protected:
 public:
-    Dog() { std::cout << "Dog constructor \n"; }
-    ~Dog() { std::cout << " Dog destrutor\n"; }
-    void wagTail() { std::cout << "wagging tail\n"; }
-    void speak() const { std::cout<<"Woof woof\n"; }
-    void move() const { std::cout << "Dog, move 5 steps \n"; }
+    Dog() { std::cout << " Dog constructor\n"; }
+    ~Dog() { std::cout << " Dog constructor\n"; }
+
+    void speak() const { std::cout << "woof woof\n"; }
 };
+//--------------------------
 int main()
 {
-    //note, when you do this, you are basically invoking!! 
-    //literally,  Mammal *pDog = new Dog calls the constructor and cout's like a function
-    //in this case since we have a base(parent) and a subclass(child function), both constructors are invoked 
-    Mammal *pDog = new Dog;
+    const int numberMammals = 3; // a strict
+    Mammal *zoo[numberMammals];  // an array for preparation
+    Mammal *pMammal;             // pointer
 
-    //pDog is pointing to the address of move but the parent since pDog is of type Mammal
-    //so pdog is pointing to the address of move() thats in the base mammal class
-    pDog->move();
+    int choice, i;
 
-    //since mammal has virtual void speak(), pDog->speak() will point to the address of Dogs speak() function instead of the base
-    //if the keyword virtual wasnt there, it would point to the address of mammal instead of dog but since its there (the virtual word)
-    //mammal is saying "use their synonymous function, not mine!"
-    pDog->speak();
-    return 0;
+    for (i = 0; i < numberMammals; i++)
+    {
+        std::cout << "Enter \n (1) dog \n or \n (2) Cat: ";
+        std::cin >> choice;
+
+        if (choice == 1)
+            pMammal = new Dog;
+        else
+            pMammal = new Cat;
+        zoo[i] = pMammal; // so, the iterator of zoo (zoo[i] will stored in the address of pMammal)
+                          // then pMammal gets an address, I think
+    }
+
+    std::cout << "the number of pmam is: " << pMammal;
+    std::cout << "\n";
+
+    for (i = 0; i < numberMammals; i++)
+    {
+        zoo[i]->speak();
+
+        Cat *pRealCat = dynamic_cast<Cat *>(zoo[i]);
+
+        if (pRealCat)
+
+            pRealCat->purr();
+        else
+            std::cout << "Oh naww, thats not a cat, bruh ";
+
+        delete zoo[i];
+
+        std::cout << "\n";
+    }
 }

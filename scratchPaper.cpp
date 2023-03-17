@@ -36,6 +36,29 @@ void Circle::draw()
 class Rectangle : public Shape
 {
 public:
+
+//====================================================================================================================================================
+//made this because when I try to compile, for the square ()lines 81-84), it throws an error saying rectangle has noo default constructor
+//the original code in the txt file is correct but this is how i understand the code, by calling rectangle inside
+/*
+        Square::Square(int newLen)
+        {
+             Rectangle(newLen, newLen);
+        }
+        ===========vs===========
+        Square::Square(int newLen) : Rectangle(newLen, newLen)
+            {
+            }
+            I have to understand this concept better to start usng it
+
+*/
+//the constructor i added
+ Rectangle(){};
+//the constructor i added
+ 
+ //====================================================================================================================================================
+
+ 
     Rectangle(int newLen, int newWidth)
     {
         length = newLen, width = (newWidth);
@@ -66,16 +89,17 @@ void Rectangle::draw()
 class Square : public Rectangle
 {
 public:
-    Square(int len);
-    Square(int len, int width);
+    Square(int);
+    Square(int, int);
     ~Square() {}
     long getPerim() { return 4 * getLength(); }
 };
 //========================================================
 
-
-Square::Square(int newLen) : Rectangle(newLen, newLen)
+//I believe this is the default constructor
+Square::Square(int newLen)
 {
+    Rectangle(newLen, newLen);
 }
 //========================================================
 

@@ -13,10 +13,10 @@ public:
 class Circle : public Shape
 {
 public:
-    //============================================================================================================================
-    // when youu see this , its saying radius - new radius.. so radius(newRadius) is the same as radius = newRadius, in brackets
-    // ill do it for the square
-    //============================================================================================================================
+//============================================================================================================================
+//when youu see this , its saying radius - new radius.. so radius(newRadius) is the same as radius = newRadius, in brackets
+//ill do it for the square.. but in the modified version of this txt file
+//============================================================================================================================
     Circle(int newRadius) : radius(newRadius) {}
     ~Circle() {}
     long getArea() { return 3 * radius * radius; }
@@ -36,10 +36,7 @@ void Circle::draw()
 class Rectangle : public Shape
 {
 public:
-    Rectangle(int newLen, int newWidth)
-    {
-        length = newLen, width = (newWidth);
-    }
+    Rectangle(int newLen, int newWidth) : length(newLen), width(newWidth) {}
     virtual ~Rectangle() {}
     virtual long getArea() { return length * width; }
     virtual long getPerim() { return 2 * length + 2 * width; }
@@ -72,12 +69,11 @@ public:
     long getPerim() { return 4 * getLength(); }
 };
 //========================================================
-
-
 Square::Square(int newLen) : Rectangle(newLen, newLen)
 {
 }
 //========================================================
+
 
 Square::Square(int newLen, int newWidth) : Rectangle(newLen, newWidth)
 {

@@ -1,5 +1,6 @@
 #include <iostream>
 
+ 
 class Shape
 {
 public:
@@ -52,6 +53,10 @@ public:
             I have to understand this concept better to start usng it
 
 */
+
+//😞😞😞😞😞😞😞😞😞😞😞😞😞😞😞😞😞
+//note this code doesnt work.  when you try to do the rectangle by pressing 3, it creates an infinite loop.. so 
+//im gonna have to understand the : initializer and the meaning of it..
 //the constructor i added
  Rectangle(){};
 //the constructor i added

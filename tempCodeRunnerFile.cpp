@@ -1,1 +1,2 @@
-age = 1;
+
+    long getPerim() { return 9 * radius; }

@@ -17,3 +17,8 @@ or
 but return 0 is always recommended
 
 ----------------------------------------------------
+
+// note.. if you ever get undefined reference to main when, say compiling online (because doublecheckinh online is better)
+//it probably because you spelled main wrong lol
+
+----------------------------------------------------

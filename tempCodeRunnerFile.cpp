@@ -1,4 +1,1 @@
-#include <iomanip>
-
-int main()
-{
+null

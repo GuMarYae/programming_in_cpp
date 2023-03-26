@@ -26,7 +26,7 @@ class Data
 public:
     Data(int newVal) : value(newVal) {}
     ~Data() {}
-    int compare(const Data &);
+    int compare(const Data&);
     void show() { std::cout << value << "\n"; }
 
 private:
@@ -35,7 +35,7 @@ private:
 
 // Compare is used to decide where in the list
 // a particular object belongs.
-int Data::compare(const Data &otherData)
+int Data::compare(const Data& otherData)
 {
     if (value < otherData.value)
         return kIsSmaller;
@@ -70,6 +70,11 @@ private:
 // we cover templates.
 class InternalNode : public Node
 {
+
+    private:
+    Data *data; // the data itself
+    Node *next; // points to next node in the linked list
+    
 public:
     InternalNode(Data *data, Node *next);
     virtual ~InternalNode()
@@ -77,16 +82,16 @@ public:
         delete next;
         delete data;
     }
+    
     virtual Node *insert(Data *data);
+
     virtual void show()
     {
         data->show();
         next->show();
     } // delegate!
 
-private:
-    Data *data; // the data itself
-    Node *next; // points to next node in the linked list
+
 };
 
 // All the constructor does is to initialize
@@ -98,12 +103,13 @@ InternalNode::InternalNode(Data *newData, Node *newNext) : data(newData), next(n
 // When you put a new object into the list
 // it is passed to the node which figures out
 // where it goes and inserts it into the list
-Node *InternalNode::insert(Data *otherData)
+Node *InternalNode::insert(Data* otherData)
 {
     // is the new guy bigger or smaller than me?
     int result = data->compare(*otherData);
 
-    switch (result)
+      //similar to an if statement  
+    switch (result) 
     {
     // by convention if it is the same as me it comes first
     case kIsSame:   // fall through
@@ -217,6 +223,7 @@ int main()
         std::cin >> val;
         if (!val)
             break;
+            
         pData = new Data(val);
         ll.insert(pData);
     }
@@ -224,4 +231,6 @@ int main()
     // now walk the list and show the data
     ll.showAll();
     return 0; // ll falls out of scope and is destroyed!
+              //program closes
+              //all destructors are called
 }

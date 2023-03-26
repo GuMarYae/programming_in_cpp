@@ -47,7 +47,22 @@ int main()
     third->next = NULL;
     // print
     std::cout << third->value << "\n"
-              << "the third node element points toooooo: " << third->next;
+              << "the third node element points toooooo: " << third->next << "\n";
+
+    pNode forth;
+    forth = new Node;
+    forth = head;
+    std::cout << forth->value << "\n";
+    forth = forth->next;
+    // forth = forth->next;
+    std::cout << forth->value << "\n";
+    forth->next = NULL;
+
+    // this means that forth is pointing to the third node.
+    // forth->next = second;
+
+    // std::cout << forth->value << "\n";
+    // std::cout << forth->next << "\n";
 
     return 0;
 }

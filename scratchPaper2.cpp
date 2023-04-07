@@ -11,19 +11,10 @@
 
 int main()
 {
+    int address;
+    
 
-    double numbers;
-    long numbers2;
-
-    if (sizeof(numbers2) == sizeof(numbers))
-    {
-        std::cout << sizeof(numbers2) << "\n"
-                  << sizeof(numbers);
-    }
-    else
-        std::cout << "not equal";
-
-   
+    std::cout <<&address;
 
     return 0;
 };

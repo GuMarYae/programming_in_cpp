@@ -9,9 +9,9 @@
 int main()
 {
 
-    Data *pData;
-    int value;
-    LinkedList infinityNodes;
+    Data* pData; //made a Data type (pointer) and named it pData. didnt set anything to it, yet.
+    int value;   //made an int type and named it value. it has no value yet.
+    LinkedList infinityNodes; //made a linkedList type and named it infinityNodes. didnt set anything to it yet
 
     // store values in the linkedlist
     while (true)

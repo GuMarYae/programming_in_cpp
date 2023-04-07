@@ -16,9 +16,9 @@ private:
     int value;
 
 public:
-    // constructor
-    // an initialization list. It initializes members before the body of the constructor executes
-    // you can immedietely use the variable name as the parameter n the initializaion list
+    // inline constructor
+    //// an initialization list. It initializes members before the body of the constructor executes
+    ////// you can immedietely use the variable name as the parameter n the initializaion list
     Data(int newVal) : value(newVal) {}
 
     // destructor
@@ -28,7 +28,7 @@ public:
     // const because we dont want to be able to modify it once its in as an actual value;
     // soo instead of saying int compare equals ~7 , we're saying int compare is some number
     // the reason why we didnt do int compare; is because we want the number to be a constant and this is the only way to accomplush that
-    int compare(const Data &);
+    int compare(const Data&);
     // FUNCTION
     void show() { std::cout << value << std::endl; }
 };
@@ -73,6 +73,9 @@ public:
     // 💥💥💥💥💥💥💥💥💥💥💥Note: i had InternalNode(Data *data, Node *next) {}
     // 💥💥💥💥💥💥💥💥💥💥💥with those brackets {} it compares the declaration with the definifion and says the definition is previosly defined
     // One or the other need brackets or just take out the brackets from the .h FIRST
+    //rulle of thumb.. always put declarations with a semi colon at the end
+    //for the definitions of the declarations, always remove the semi and add brackets.
+    
     InternalNode(Data *data, Node *next);
     virtual ~InternalNode()
     {

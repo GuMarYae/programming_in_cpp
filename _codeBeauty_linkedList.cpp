@@ -29,6 +29,7 @@ int main()
     // here
     // so head is the first element of a linked list
     // followed by two more element pointers
+    //Node is a pointer (Node*) so thats why you use the member acess operator later for the variable name for it (->)
     Node* head = new Node(); //these are all zero by default because of (Node() : value(0)) for now
     Node* second = new Node();
     Node* third = new Node();

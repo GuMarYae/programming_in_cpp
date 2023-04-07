@@ -6,7 +6,7 @@
 //  since theres no public, this is all defaulted to private
 // im making a data type called otherdata and storing it in an address of type Data
 // the reason why we're scoping Data is bacause we need to use the value variable inside of it
-int Data::compare(const Data &otherData)
+int Data::compare(const Data& otherData)
 {
     if (value < otherData.value)
         return K_I_is_smaller;

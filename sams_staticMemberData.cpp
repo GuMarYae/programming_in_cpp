@@ -1,5 +1,5 @@
 #include <iostream>
-//.h file
+
 class Robot
 {
 private:
@@ -9,7 +9,16 @@ public:
     Robot() {}
     // That’s constructor initialization. It is the correct way to initialize
     // members in a class constructor, as it prevents the default constructor being invoked.
-    Robot(int newAge) : age(newAge) { howManyRobots++; }
+
+    Robot(int newAge)
+
+    {
+        newAge = 1;
+        age = (newAge);
+        howManyRobots++;
+        // or Robot(int newAge = 1) : age(newAge) { howManyRobots++; }
+    }
+
     virtual ~Robot() { howManyRobots--; }
     // i put that const in cause im dope
 
@@ -20,17 +29,17 @@ public:
     static int howManyRobots;
 };
 // this is the definitin of static variable
-int Robot::howManyRobots(100);
+int Robot::howManyRobots(11);
 
 int main()
 {
 
-    const int maxRobots = (100);
+    const int maxRobots = (7);
     // class Robot pointer of the size of maxRobot
     Robot *gestalt[maxRobots];
 
     int i;
-    for ( int i = 0; i < maxRobots ; i++)
+    for (int i = 0; i < maxRobots; i++)
         gestalt[i] = new Robot(i);
     for (i = 0; i < maxRobots; i++)
     {
@@ -39,7 +48,7 @@ int main()
         std::cout << " robots left\n";
         std::cout << "Deleting one, which is: \n";
         std::cout << gestalt[i]->getAge();
-        std::cout << "years old \n";
+        std::cout << " years old \n";
         delete gestalt[i];
         gestalt[i] = 0;
     }

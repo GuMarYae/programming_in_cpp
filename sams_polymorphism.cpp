@@ -53,6 +53,11 @@ int main()
     //since mammal has virtual void speak(), pDog->speak() will point to the address of Dogs speak() function instead of the base
     //if the keyword virtual wasnt there, it would point to the address of mammal instead of dog but since its there (the virtual word)
     //mammal is saying "use their synonymous function, not mine!"
-    pDog->speak();
+    //they are both actually called but the recommended function is invoked then used
+
+    //page 157. you can use either one of these commands
+    //pDog->speak();
+    (*pDog).speak();
+
     return 0;
 }

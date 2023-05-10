@@ -7,14 +7,36 @@
 #include <sstream>
 #include <vector>
 
-/*neither of these compile,.. will get back to this*/
+class Box
+{
+public:
+    int data;
+    Box *next;
+    // constructor
+    
+    Box(int data)
+    {
+        this->data = data;
+        std::cout << this->data;
+    }
+};
+
+typedef Box* pBox;
 
 int main()
 {
-    int address;
-    
+    pBox nodeA;
+    pBox nodeB;
+    pBox nodeC;
+    pBox nodeE;
+    pBox nodeF;
 
-    std::cout <<&address;
+    nodeA = new Box(6);
+    nodeB = new Box(0);
+    nodeC = new Box(4);
+    nodeF = new Box(2);
+    nodeE = new Box(1);
 
-    return 0;
-};
+
+    std::cout<<nodeA->data;
+}

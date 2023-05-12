@@ -1,3 +1,11 @@
+to push:
+
+git add .
+git commit -m "abcdefg"
+git push origin |main| or |master|
+
+----------------------------------------------------
+
 to compile the professional way
 
 1) g++ -o test nameOfFile.cpp [ENTER]

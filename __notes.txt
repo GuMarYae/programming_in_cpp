@@ -1,0 +1,32 @@
+to push:
+
+git add .
+git commit -m "abcdefg"
+git push origin |main| or |master|
+
+----------------------------------------------------
+
+to compile the professional way
+
+1) g++ -o test nameOfFile.cpp [ENTER]
+2) ./test [ENTER]
+
+for javascript
+1.) node nameOffile.js [ENTER}
+
+----------------------------------------------------
+
+you can use 
+
+    return 0;
+or 
+    system("pause>0")
+
+but return 0 is always recommended
+
+----------------------------------------------------
+
+// note.. if you ever get undefined reference to main when, say compiling online (because doublecheckinh online is better)
+//it probably because you spelled main wrong lol
+
+----------------------------------------------------

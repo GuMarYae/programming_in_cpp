@@ -1,0 +1,77 @@
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <cmath>
+#include <ctime>
+#include <string>
+#include <sstream>
+#include <vector>
+
+/*neither of these compile,.. will get back to this*/
+
+int main()
+{
+
+    double numbers;
+    long numbers2;
+
+    if (sizeof(numbers2) == sizeof(numbers))
+    {
+        std::cout << sizeof(numbers2) << "\n"
+                  << sizeof(numbers);
+    }
+    else
+        std::cout << "not equal";
+
+   
+
+    return 0;
+};
+
+
+-----------------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctime>
+#include <vector>
+#include <string>
+#include <sstream>
+
+class SimpleCat
+{
+private:
+    // internals
+    int itsAge_;
+    int itsWeight_;
+
+public:
+    // constructor
+    SimpleCat(int age, int weight);
+    ~SimpleCat();
+    int getAge() const;
+    int getWeight() const;
+    //====================================
+
+     /*  im use to this way but the other one is in the book
+         SimpleCat::SimpleCat(int age, int weight) {
+            itsAge_=age;
+            itsWeight_=weight;
+        }
+     */
+
+    // SimpleCat::SimpleCat(int age, int weight):itsAge_(age), itsWeight_(weight){}
+
+    SimpleCat::~SimpleCat()
+    {
+        std::cout << "destructor activated";
+    }
+    // you can use these two functions in the .h file to make them inline so you wont have to use these here
+    int SimpleCat::getAge() { return itsAge_; }
+    int SimpleCat::getWeight() { return itsWeight_; }
+};
+
+int main()
+{
+}

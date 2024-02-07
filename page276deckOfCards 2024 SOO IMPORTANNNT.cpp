@@ -30,36 +30,54 @@ int main()
 
   // this is why i made a 2024 VERSION SO READ CAREFULLY TO UNDERSTAND ARRAYS AND ELEMENTS
   //  shuffle the cards
-  for (int i = 0; i < NUMBER_OF_CARDS; i++) //A) this gots through the 0-51 elements in order
+  for (int i = 0; i < NUMBER_OF_CARDS; i++) // A) this gots through the 0-51 elements in order
   {
     // generate an index randomly
-    int index = rand() % NUMBER_OF_CARDS;   //B) so at element [0] from the forloop, this is generated a random number from 0-51 and stored it in index lets say it generated an 11
-    int temp = deck[i];                     //C) temp is created and stores the VALUE at deck[i], we'll use element[0] from B and its the first element 
-                                            //   in the array. the value at element [0] is 0 from the first forloop storing values above  
-    deck[i] = deck[index];                  //D) IMPORTANT deck[i] (or deck[0] = 0) means that the value at element [0], which is 0, is now the value at deck[index],index is a value of 11 but since its deck[index], 
-                                            //the value of 11 plugged in as an element of deck[index] or deck[11] who's value is 11 so now deck[0] = 11 and deck[11] is also 11, for now
-    deck[index] = temp;                     //E) deck[index] (or deck[11] = 11) is now storing its value as temp, which was the the value that deck[0] was when it was stored in temp
+    int index = rand() % NUMBER_OF_CARDS;   // B) so at element [0] from the forloop, this is generated a random number from 0-51 and stored it in index lets say it generated an 11
+    int temp = deck[i];                     // C) temp is created and stores the VALUE at deck[i], we'll use element[0] from B and its the first element
+                                            //    in the array. the value at element [0] is 0 from the first forloop storing values above
+    deck[i] = deck[index];                  // D) IMPORTANT deck[i] (or deck[0] = 0) means that the value at element [0], which is 0, is now the value at deck[index],index is a value of 11 but since its deck[index],
+                                            //    the value of 11 plugged in as an element of deck[index] or deck[11] who's value is 11 so now deck[0] = 11 and deck[11] is also 11, for now
+    deck[index] = temp;                     // E) deck[index] (or deck[11] = 11) is now storing its value as temp, which was the the value that deck[0] was when it was stored in temp
                                             /*
-                                            so 
+                                            so
                                             temp = 0
                                             deck[0] = 11
                                             deck[11] = 0
                                             */
-                                           //the loop then iterates to i++ and we do it all over for int [1] 
+                                            // the loop then iterates to i++ and we do it all over for int [1]
 
     std::cout << deck[i] << " ";
-
   }
   std::cout << "\n";
   // display first 4 cards
   for (int i = 0; i < 4; i++)
   {
-
     std::string suit = suits[deck[i] / 13];
     std::string rank = ranks[deck[i] % 13];
     std::cout << "card Number " << deck[i] << ": is "
               << rank << " of " << suit << std::endl;
   }
+  /*
+     suit = suits[deck[i] / 13];
+     so, on the first iteration of the loop where i is 0, the expression suits[deck[i] / 13] translates to suits[deck[0] / 13].
+     Here's the step-by-step for the first iteration (i = 0):
+
+     deck[0] will give us the value of the first element in the deck array. Let's say, after shuffling, the first element has the value 26.
+     To find the suit, we divide this value by 13, because there are 13 cards for each suit. So, 26 / 13 equals 2.
+     We then use this result as an index to access the suits array: suits[2].
+     suits[2] corresponds to "Diamonds" (given that suits is defined as {"Spades", "Hearts", "Diamonds", "Clubs"}).
+     So, suit will be assigned the value "Diamonds".
+
+     ranks[deck[i] % 13];
+    deck[0] gives us the value of the first element in the deck array after shuffling. Suppose this value is 26 since it has to be the same value i as above.
+
+    We then take this value and apply the modulo operator % with 13. The modulo operation gives us the remainder when 26 is divided by 13, which in this case is 0 because 26 is evenly divisible by 13.
+
+    We use this remainder as an index to access the ranks array: ranks[0].
+
+    The ranks array is defined with the card ranks in order, starting from "Ace" and going to "King". Since arrays are zero-indexed in C++, ranks[0] corresponds to "Ace".
+    */
 
   return 0;
 }

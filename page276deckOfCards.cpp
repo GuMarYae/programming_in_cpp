@@ -20,7 +20,10 @@ int main()
     std::cout << deck[i] << " "; // all numbers(card numbers) should print from 0 to 51 💥💥💥💥
   }
   std::cout << "\n";
-  // std::cout << deck[1];
+  std::cout << deck[1];
+  std::cout << "\n";
+  srand(time(0));
+
   /*
   💥💥💥💥💥💥💥💥💥💥💥💥
   KEY WORD = DENOTE(STATEMENT)
@@ -45,43 +48,43 @@ int main()
     int index = rand() % NUMBER_OF_CARDS;
     int temp = deck[i];
     deck[i] = deck[index];
-    deck[index] = temp;//you dont even need this one line.. its just by convention to keep everything usable by swapping from i and j (in this, j = deck[index])
-                       //all we wanted was to somehow get the new deck[i] to randomize (we named this one deck[i] because they basically representing 
-                       //the same task, (we wanted 52 numbers as deck i, now we want them randomized).
-                       // so we assigned index as random NUMBER_OF_CARDS since it was denoted earlier by deck[i].
-                       //then we wanted deck [i] to equal it but still wanted the original order index 0-51 
-                       //💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-                       //💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-                       //soo what am i tryin to say??
+    deck[index] = temp; // you dont even need this one line.. its just by convention to keep everything usable by swapping from i and j (in this, j = deck[index])
+                        // all we wanted was to somehow get the new deck[i] to randomize (we named this one deck[i] because they basically representing
+                        // the same task, (we wanted 52 numbers as deck i, now we want them randomized).
+                        //  so we assigned index as random NUMBER_OF_CARDS since it was denoted earlier by deck[i].
+                        // then we wanted deck [i] to equal it but still wanted the original order index 0-51
+                        // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
+                        // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
+                        // soo what am i tryin to say??
 
-                       //all you really needed in this line of code, really was deck[i] = rand() % NUMBER_OF_CARDS;
-                       //and printed it to see if the numbers randomized. They do!!!
-                       /*
-                       you dont need
-                        int index = rand() % NUMBER_OF_CARDS;
-                        int temp = deck[i];
-                        deck[i] = deck[index];
-                        deck[index] = temp
-                        ---->  this IIS to randomize but more so to keep the have a variable = an ordered 0-51 and the other variable to have 0-51 random
-                        all you needed was 
-                        deck[i] = rand() % NUMBER_OF_CARDS
-                       */
-    std::cout << deck[i] << " ";// all numbers(card numbers) should print randomly from 0 to 51 💥💥💥💥
+    // all you really needed in this line of code, really was deck[i] = rand() % NUMBER_OF_CARDS;
+    // and printed it to see if the numbers randomized. They do!!!
+    /*
+    you dont need
+     int index = rand() % NUMBER_OF_CARDS;
+     int temp = deck[i];
+     deck[i] = deck[index];
+     deck[index] = temp
+     ---->  this IIS to randomize but more so to keep the have a variable = an ordered 0-51 and the other variable to have 0-51 random
+     all you needed was
+     deck[i] = rand() % NUMBER_OF_CARDS
+    */
+    std::cout << deck[i] << " "; // all numbers(card numbers) should print randomly from 0 to 51 💥💥💥💥
   }
   std::cout << "\n";
   // display first 4 cards
   for (int i = 0; i < 4; i++)
   {
 
-    std::string suit = suits[deck[i] / 13];//this still looks new to me but its the same as array[i] since suits is an array of strings and deck is an array of numbers,
-                                           //suit simpplifies until it looks like te standard array[i]
-                                           /*ex 
-                                            suits[deck[i] / 13] can be 
-                                            suits[deck[26] / 13] which is
-                                            suits[deck[26] which is 
-                                            suits[2] which is now in standard array[] form
-                                            thats gonna just take some practice
-                                           */
+    std::string suit = suits[deck[i] / 13]; // this still looks new to me but its the same as array[i] since suits is an array of strings and deck is an array of numbers,
+                                            // suit simpplifies until it looks like te standard array[i]
+    /*ex
+     suits[deck[i] / 13] can be
+     suits[deck[26] / 13] which is
+     suits[deck[26] which is
+     suits[2] which is now in standard array[] form
+     thats gonna just take some practice
+    */
     std::string rank = ranks[deck[i] % 13];
     std::cout << "card Number " << deck[i] << ": is "
               << rank << " of " << suit << std::endl;

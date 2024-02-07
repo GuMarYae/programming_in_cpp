@@ -11,17 +11,17 @@
 int main()
 {
     Circle circle_1;
-        circle_1=9;
-
+    circle_1 = 15;
 
     std::cout << "The area of the circle of radius " << circle_1.getRadius() << " is " << circle_1.getArea() << std::endl;
 
-    circle_1.setRadius(10);
+    circle_1.setRadius(15);
 
     std::cout << "The  new modified area of the circle of radius " << circle_1.getRadius() << " is " << circle_1.getArea() << std::endl;
+    std::cout << "\n"
+              << std::endl;
 
-    //std::cout<<circle_1.radius;
-//std::cout<<circle_1.radius; doesnt work anymore because its in private now.. it use t work but now, you need get snd set
-
+    // std::cout<<circle_1.radius;
+    // std::cout<<circle_1.radius; doesnt work anymore because its in private now.. it use t work but now, you need get snd set
     return 0;
 }
